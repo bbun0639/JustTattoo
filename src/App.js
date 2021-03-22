@@ -3,17 +3,9 @@ import './components/AppHeader'
 import AppHeader from './components/AppHeader';
 import TattooItem from './components/TattooItem';
 import TattooPost from './components/TattooPost';
+import tattoos from './data/tattoos';
 
-const tattoos = [
-    {
-        title: "แขนเท่ห์ๆ",
-        thumbnailUrl: "/images/tattoo-01-small.jpg"
-    },
-    {
-        title: "แขนเท่ห์ๆ",
-        thumbnailUrl: "/images/tattoo-02-small.jpg"
-    }
-];
+
 
 function App() {
     const tattooElements = tattoos.map((tattoo, index) => {
