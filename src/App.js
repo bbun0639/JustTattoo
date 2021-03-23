@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import './components/AppHeader'
 import AppHeader from './components/AppHeader';
@@ -8,16 +9,23 @@ import tattoos from './data/tattoos';
 
 
 function App() {
+    const [selectedTattoo, setSelectedTattoo] = useState(tattoos[0]);
     const tattooElements = tattoos.map((tattoo, index) => {
         return <TattooItem key={index} tattoo={tattoo} />;
     })
+
+    let tattooPost = null;
+    if (!!selectedTattoo) {
+        tattooPost = <TattooPost tattoo={selectedTattoo} />
+    }
+
     return (
         <div className="App">
             <AppHeader />
             <div className="app-grid">
                 {tattooElements}
             </div>
-            {/* <TattooPost/> */}
+            {tattooPost}
         </div>
     );
 }
